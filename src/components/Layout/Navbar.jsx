@@ -1,19 +1,52 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/skills', label: 'Skills' },
-    { path: '/articles', label: 'Articles' },
-    { path: '/profiles', label: 'Profiles' },
-    { path: '/contact', label: 'Contact' },
+    { id: 'hero', label: 'Home' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'profiles', label: 'Profiles' },
+    { id: 'contact', label: 'Contact' },
 ]
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
-    const location = useLocation()
+    const [activeSection, setActiveSection] = useState('hero')
+
+    // Scroll spy functionality
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = navLinks.map(link => ({
+                id: link.id,
+                element: document.getElementById(link.id)
+            }))
+
+            const scrollPosition = window.scrollY + 100
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i]
+                if (section.element && section.element.offsetTop <= scrollPosition) {
+                    setActiveSection(section.id)
+                    break
+                }
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        handleScroll() // Initial check
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    const scrollToSection = (e, sectionId) => {
+        e.preventDefault()
+        const element = document.getElementById(sectionId)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+        setIsOpen(false)
+    }
 
     return (
         <motion.nav
@@ -22,30 +55,34 @@ function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
         >
-            <Link to="/" className="navbar-logo">
+            <a
+                href="#hero"
+                className="navbar-logo"
+                onClick={(e) => scrollToSection(e, 'hero')}
+            >
                 <motion.span
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
                     Portfolio
                 </motion.span>
-            </Link>
+            </a>
 
             <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
                 {navLinks.map((link, index) => (
                     <motion.li
-                        key={link.path}
+                        key={link.id}
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 * index, duration: 0.4 }}
                     >
-                        <Link
-                            to={link.path}
-                            className={`navbar-link ${location.pathname === link.path ? 'active' : ''}`}
-                            onClick={() => setIsOpen(false)}
+                        <a
+                            href={`#${link.id}`}
+                            className={`navbar-link ${activeSection === link.id ? 'active' : ''}`}
+                            onClick={(e) => scrollToSection(e, link.id)}
                         >
                             {link.label}
-                        </Link>
+                        </a>
                     </motion.li>
                 ))}
             </ul>
