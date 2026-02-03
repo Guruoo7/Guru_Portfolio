@@ -10,10 +10,9 @@ const skills = [
     { name: 'TensorFlow / AI-ML', level: 82, color: '#FF6F00', icon: '🤖' },
     { name: 'MySQL / MongoDB', level: 85, color: '#47a248', icon: '🗃️' },
     { name: 'AWS', level: 78, color: '#0db7ed', icon: '☁️' },
-    { name: 'Azure', level: 58, color: '#0db7ed', icon: '☁️' },
+    { name: 'Azure Devops', level: 58, color: '#0db7ed', icon: '☁️' },
     { name: 'Django', level: 92, color: '#3776ab', icon: '🐍' },
-    { name: 'Dart', level: 88, color: '#02569B', icon: '📱' },
-    { name: 'Flutter', level: 88, color: '#02569B', icon: '📱' },
+    { name: 'Flutter/Dart', level: 88, color: '#02569B', icon: '📱' },
     { name: 'Git / GitHub', level: 90, color: '#6e5494', icon: '🔀' },
 ]
 

@@ -71,7 +71,7 @@ function HeroAbout() {
                         className="text-body-lg"
                         style={{ maxWidth: '700px', margin: '0 auto 1.5rem' }}
                     >
-                        Programmer Analyst Trainee @ Cognizant | AI & Data Science Engineer
+                        Software Engineer Trainee @ Cognizant
                     </motion.p>
 
                     <motion.p
@@ -79,8 +79,8 @@ function HeroAbout() {
                         className="text-body"
                         style={{ maxWidth: '600px', margin: '0 auto 2rem' }}
                     >
-                        Specializing in Django, Flutter, Python, and AI/ML. Building enterprise solutions
-                        with hands-on experience in Azure, Dynatrace, and IBM AS/400.
+                        Specializing in Django, Flutter, Python and AI/ML. Building enterprise solutions
+                        with hands-on experience in Azure, Dynatrace and IBM AS/400.
                     </motion.p>
 
                     {/* CTA Buttons */}
