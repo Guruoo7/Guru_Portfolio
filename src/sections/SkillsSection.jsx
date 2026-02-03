@@ -2,14 +2,17 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const skills = [
-    { name: 'Python / Django', level: 92, color: '#3776ab', icon: '🐍' },
-    { name: 'Flutter / Dart', level: 88, color: '#02569B', icon: '📱' },
+    { name: 'Python', level: 92, color: '#3776ab', icon: '🐍' },
+    { name: 'Dart', level: 88, color: '#02569B', icon: '📱' },
     { name: 'Java', level: 85, color: '#ED8B00', icon: '☕' },
     { name: 'HTML / CSS', level: 90, color: '#e34c26', icon: '🌐' },
     { name: 'TensorFlow / AI-ML', level: 82, color: '#FF6F00', icon: '🤖' },
     { name: 'MySQL / MongoDB', level: 85, color: '#47a248', icon: '🗃️' },
-    { name: 'AWS S3 / Azure', level: 78, color: '#0db7ed', icon: '☁️' },
+    { name: 'Azure', level: 68, color: '#0db7ed', icon: '☁️' },
+    { name: 'AWS', level: 79, color: '#0db7ed', icon: '☁️' },
     { name: 'Git / GitHub', level: 90, color: '#6e5494', icon: '🔀' },
+    { name: 'Django', level: 90, color: '#6e5494', icon: '🔀' },
+    { name: 'Flutter', level: 88, color: '#02569B', icon: '📱' },
 ]
 
 const tools = [
