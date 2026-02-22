@@ -4,19 +4,19 @@ import { motion, useInView } from 'framer-motion'
 const profiles = [
     {
         name: 'GitHub',
-        username: '@guruprasanth-m',
+        username: '@Guruoo7',
         icon: '🐙',
         stats: { label: 'Repositories', value: '20+' },
         color: '#6e5494',
-        url: 'https://github.com',
+        url: 'https://github.com/Guruoo7',
     },
     {
         name: 'LeetCode',
-        username: '@guruprasanth',
+        username: '@Guruprasanth_M',
         icon: '🧩',
         stats: { label: '50 Days Badge', value: '🏅' },
         color: '#ffa116',
-        url: 'https://leetcode.com',
+        url: 'https://leetcode.com/u/Guruprasanth_M/',
     },
     {
         name: 'LinkedIn',

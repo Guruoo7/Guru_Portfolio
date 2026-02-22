@@ -5,17 +5,18 @@ const experiences = [
     {
         id: 1,
         company: 'Cognizant Technology Solutions',
-        role: 'Programmer Analyst Trainee',
+        role: 'Software Engineer Trainee',
         duration: 'Mar 2025 - Present',
         location: 'Chennai, India',
         type: 'Full-time',
         description: 'Working on enterprise-level applications and monitoring systems for critical business operations.',
         responsibilities: [
-            'Debugging and maintaining enterprise IBM iSeries (AS/400) applications',
-            'Optimizing SQL queries for improved database performance',
-            'Monitoring application health using Dynatrace, Grafana, and Splunk',
-            'Working with Azure cloud services for deployment and monitoring',
-            'Analyzing production issues and implementing timely fixes',
+            'Developing and testing new application modules in IBM iSeries (AS/400) environment',
+            'Designing and creating database files in SQL-supported formats to ensure modern data compatibility',
+            'Writing functional business logic based on requirement documents following Agile methodology',
+            'Participating in sprint planning, development, testing, and deployment activities',
+            'Received structured training in Azure DevOps from an external corporate trainer',
+            'Completed hands-on training in monitoring and observability tools including Splunk, Dynatrace, and Grafana'
         ],
         technologies: ['IBM AS/400', 'SQL', 'Dynatrace', 'Grafana', 'Splunk', 'Azure'],
         color: '#6366f1',
@@ -25,18 +26,17 @@ const experiences = [
         id: 2,
         company: 'Blaze Web Services',
         role: 'Django Developer',
-        duration: 'July 2024 - Aug 2024',
+        duration: 'July 2023 - Aug 2023',
         location: 'India',
-        type: ' Intern',
-        description: 'Built a Django-based SaaS platform as finalist among 25,000 participants in Smart India Hackathon 2024.',
+        type: 'Intern',
+        description: 'Built a Django-based stock analysis web app with REST APIs for data processing and financial insights.',
         responsibilities: [
             'Developed and debugged RESTful backend services using Django to support data ingestion and application workflows',
-'Designed backend data pipelines that replaced manual analysis workflows, reducing analyst effort by - 60%',
-'Optimized database queries and API responses, reducing dashboard load time by -40%',
-'Investigated API failures, handled edge cases and fixed data validation issues to improve system reliability',
-           
+            'Designed backend data pipelines that replaced manual analysis workflows, reducing analyst effort by - 60%',
+            'Optimized database queries and API responses, reducing dashboard load time by -40%',
+            'Investigated API failures, handled edge cases and fixed data validation issues to improve system reliability',
         ],
-        technologies: ['Django', 'Python','Rest API'],
+        technologies: ['Django', 'Python', 'Rest API'],
         color: '#8b5cf6',
         icon: '🏆',
     },
@@ -123,7 +123,7 @@ function ExperienceCard({ experience, index, isInView }) {
                 }}
             >
                 {/* Header */}
-                <div className="flex justify-between items-start" style={{ flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
+                <div className="flex justify-between items-center" style={{ flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
                     <div>
                         <div className="flex items-center gap-sm" style={{ marginBottom: '0.5rem' }}>
                             <span style={{ fontSize: '1.5rem' }}>{experience.icon}</span>

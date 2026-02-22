@@ -81,7 +81,7 @@ function HeroSection() {
                     className="text-body-lg"
                     style={{ maxWidth: '700px', margin: '0 auto 1.5rem' }}
                 >
-                    Programmer Analyst Trainee @ Cognizant | AI & Data Science Engineer
+                    Software Engineer Trainee @ Cognizant | AI & Data Science Engineer
                 </motion.p>
 
                 <motion.p

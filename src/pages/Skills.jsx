@@ -6,7 +6,7 @@ const skills = [
     { name: 'Python', level: 85, color: '#3776ab', icon: '🐍' },
     { name: 'Dart', level: 88, color: '#02569B', icon: '📱' },
     { name: 'Java', level: 92, color: '#ED8B00', icon: '☕' },
-    { name: 'HTML / CSS', level: 80, color: '#e34c26', icon: '🌐' },
+    { name: 'HTML / CSS', level: 75, color: '#e34c26', icon: '🌐' },
     { name: 'TensorFlow / AI-ML', level: 82, color: '#FF6F00', icon: '🤖' },
     { name: 'MySQL / MongoDB', level: 85, color: '#47a248', icon: '🗃️' },
     { name: 'AWS', level: 78, color: '#0db7ed', icon: '☁️' },
