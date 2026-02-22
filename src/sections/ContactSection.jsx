@@ -38,14 +38,32 @@ function ContactSection() {
         setIsSubmitting(true)
         setErrors({})
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000))
+        try {
+            const submitData = new FormData()
+            submitData.append('access_key', '5614f8a2-df5d-40f9-b99f-789ecfae2a83')
+            submitData.append('name', formData.name)
+            submitData.append('email', formData.email)
+            submitData.append('message', formData.message)
 
-        setIsSubmitting(false)
-        setIsSuccess(true)
-        setFormData({ name: '', email: '', message: '' })
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: submitData,
+            })
 
-        setTimeout(() => setIsSuccess(false), 5000)
+            const result = await response.json()
+
+            if (result.success) {
+                setIsSuccess(true)
+                setFormData({ name: '', email: '', message: '' })
+                setTimeout(() => setIsSuccess(false), 5000)
+            } else {
+                setErrors({ form: 'Something went wrong. Please try again.' })
+            }
+        } catch (error) {
+            setErrors({ form: 'Network error. Please check your connection and try again.' })
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     const handleChange = (e) => {
@@ -147,6 +165,29 @@ function ContactSection() {
                     animate={isInView ? { y: 0, opacity: 1 } : {}}
                     transition={{ delay: 0.2, duration: 0.6 }}
                 >
+                    {/* General Error */}
+                    <AnimatePresence>
+                        {errors.form && (
+                            <motion.p
+                                style={{
+                                    color: '#ef4444',
+                                    fontSize: '0.875rem',
+                                    textAlign: 'center',
+                                    marginBottom: '1rem',
+                                    padding: '0.75rem',
+                                    background: 'rgba(239, 68, 68, 0.1)',
+                                    borderRadius: 'var(--radius-md)',
+                                    border: '1px solid rgba(239, 68, 68, 0.3)',
+                                }}
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                            >
+                                {errors.form}
+                            </motion.p>
+                        )}
+                    </AnimatePresence>
+
                     {/* Name Field */}
                     <motion.div
                         className="form-group"
